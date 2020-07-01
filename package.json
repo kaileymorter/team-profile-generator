@@ -6,9 +6,11 @@
   "dependencies": {
     "inquirer": "^7.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^26.1.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jest": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

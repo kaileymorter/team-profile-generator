@@ -17,6 +17,12 @@
 
   ## Usage:
   User will start the application in the root directory and type in "node index" to prompt the questions for creating a quality team profile. After the user has answered the questions and has added all of the profiles they want, a index.html file will be generated in the "dist" folder. The user can then open this file in the browser and view their newly created quality team profile.
+  
+  ![Screen Shot 2020-07-02 at 9 48 41 PM](https://user-images.githubusercontent.com/62969025/86430127-a82bde00-bcae-11ea-8823-47499a6810bd.png)
+  
+  ![Screen Shot 2020-07-02 at 9 49 48 PM](https://user-images.githubusercontent.com/62969025/86430129-a82bde00-bcae-11ea-8e7a-993f953aed08.png)
+  
+  <img width="1564" alt="Screen Shot 2020-07-02 at 9 45 08 PM" src="https://user-images.githubusercontent.com/62969025/86430123-a530ed80-bcae-11ea-931a-60259dc6902f.png">
 
   ## Credits:
   none

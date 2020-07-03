@@ -15,7 +15,7 @@ const promptUser = () => {
         {
             type: 'text',
             name: 'name',
-            message: "What is the manager's name?",
+            message: "What is the team manager's name?",
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -27,7 +27,7 @@ const promptUser = () => {
         {
             type: 'text',
             name: 'id',
-            message: "What is the manager's employee ID number?",
+            message: "What is the team manager's id?",
             validate: idInput => {
                 if (idInput) {
                     return true;
@@ -39,7 +39,7 @@ const promptUser = () => {
         {
             type: 'text',
             name: 'email',
-            message: "What is the manager's email?",
+            message: "What is the team manager's email?",
             validate: emailInput => {
                 if (emailInput) {
                     return true;
@@ -51,7 +51,7 @@ const promptUser = () => {
         {
             type: 'text',
             name: 'officeNumber',
-            message: "What is the manager's office number?",
+            message: "What is the team manager's office number?",
             validate: officeNumInput => {
                 if (officeNumInput) {
                     return true;
@@ -71,8 +71,8 @@ const promptProfile = (employeeArr) => {
         {
             type: 'list',
             name: 'employee',
-            message: "Would you like to add an Engineer, Intern or done with building your team profile?",
-            choices: ['Add Engineer!', 'Add Intern!', 'Finished with Team Profile!'],
+            message: "Would you like to add an Engineer or Intern?",
+            choices: ['Engineer', 'Intern', "Neither! I'm done with my team profile"],
             validate: roleNumInput => {
                 if (roleNumInput) {
                     return true;
@@ -83,54 +83,96 @@ const promptProfile = (employeeArr) => {
         }
     ])
     .then(({employee}) => {
-        if (employee === 'Add Engineer!') {
+        if (employee === 'Engineer') {
             return inquirer.prompt([
                 {
                     type: 'text',
                     name: 'name',
-                    message: "Enter Engineer's name.",
+                    message: "What is the Engineer's name?",
+                    validate: nameInput => {
+                        if (nameInput) {
+                            return true;
+                        } else {
+                            console.log('Please enter the Engineers name!');
+                        }
+                    }
                 },
                 {
                     type: 'text',
                     name: 'id',
-                    message: "Enter Engineer's employee ID number."
+                    message: "What is the Engineer's id?",
+                    validate: idInput => {
+                        if (idInput) {
+                            return true;
+                        } else {
+                            console.log('Please enter the Engineers id number!');
+                        }
+                    }
                 },
                 {
                     type: 'text',
                     name: 'email',
-                    message: "Provide Engineer's work email address."
+                    message: "What is the Engineer's email?",
+                    validate: emailInput => {
+                        if (emailInput) {
+                            return true;
+                        } else {
+                            console.log("Please enter the Engineer's email!");
+                        }
+                    }
                 },
                 {
                     type: 'text',
                     name: 'github',
-                    message: "Provide Engineer's GitHub username for their team profile."
+                    message: "What is the Engineer's GitHub username?"
                 },
             ])
             .then(({name, id, email, github}) => {
                 engineer.push(new Engineer(name, id, email, github))
                 return promptProfile()
             })
-        } else if (employee === 'Add Intern!') {
+        } else if (employee === 'Intern') {
             return inquirer.prompt([
                 {
                     type: 'text',
                     name: 'name',
-                    message: "Enter Intern's name."
+                    message: "What is the Intern's name?",
+                    validate: nameInput => {
+                        if (nameInput) {
+                            return true;
+                        } else {
+                            console.log("Please enter the Intern's name!");
+                        }
+                    }
                 },
                 {
                     type: 'text',
                     name: 'id',
-                    message: "Enter Intern's employee ID number."
+                    message: "What is the Intern's id?",
+                    validate: idInput => {
+                        if (idInput) {
+                            return true;
+                        } else {
+                            console.log("Please enter the Intern's id number!");
+                        }
+                    }
                 },
                 {
                     type: 'text',
                     name: 'email',
-                    message: "Provide Intern's email address."
+                    message: "What is the Intern's email?",
+                    validate: emailInput => {
+                        if (emailInput) {
+                            return true;
+                        } else {
+                            console.log("Please enter the Intern's email!");
+                        }
+                    }
                 },
                 {
                     type: 'text',
                     name: 'school',
-                    message: "What school did or is the intern going to?"
+                    message: "What school did or is the Intern going to?"
                 },
             ])
             .then(({name, id, email, school}) => {

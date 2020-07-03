@@ -26,6 +26,7 @@ const generateProfile = teamProfileData => {
             </div>
         `
     })
+    .join('')
     const intern = teamProfileData.intern.map(function (employee){
         return `
             <div class="card col-sm-3 m-1" style="width: 18rem;">
@@ -39,6 +40,7 @@ const generateProfile = teamProfileData => {
             </div>
         `
     })
+    .join('')
     return manager + engineer + intern
 }
 
